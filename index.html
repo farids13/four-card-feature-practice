@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Inter:wght@400;700&family=Kumbh+Sans:wght@700&family=League+Spartan:wght@400;700&family=Lexend+Deca:wght@400;700&family=Montserrat:wght@600&family=Outfit:wght@100;300;400;600&family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <title>Frontend Mentor | Four card feature section</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center;}
+    .attribution a { color: hsl(228, 45%, 44%); }
+    footer{
+      position: absolute;
+      bottom: 0%;
+    }
+    body{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      height: 100vh;
+      background-color: hsl(0, 0%, 98%);
+    }
+    .container{
+      transition: 0.2s ease;
+      width: 1110px;
+      height: 760px;
+      text-align: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Poppins';
+      color: black;
+    }
+    .title{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 4.6%;
+      color: hsl(234, 12%, 34%);
+    }
+    .title h1{
+      width: 50%;
+      margin: 0px 0px -5px 0px;
+      font-weight: 200;
+      font-size: 36px;
+      letter-spacing: 0.1px;
+    }
+    .title p{
+      width: 49%;
+      margin-top: 20px;
+      font-size: 15px;
+      color: hsl(229, 6%, 66%);
+    }
+    .line{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: inherit;
+      height: 5px;
+    }
+    .content{
+      /* display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1; */
+      position: relative;
+      margin: 0 auto; 
+      padding: 0;
+      width: inherit;
+      height: 20%;
+      color: hsl(234, 12%, 34%);
+    }
+    .content content{
+      display: flex;
+      flex-direction: column;
+
+      width: 350px;
+      height: 250px;
+
+      text-align: left;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      border-radius: 10px;
+
+      padding: 33px 40px 20px 33px ;
+    }
+    .content content p{
+      color: hsl(229, 6%, 66%);
+    }
+    .supervisor{
+      position: absolute;
+      top: 50%;
+      transform: translate(0, 25%);
+      left: 0%;
+      background-image: url(./images/icon-supervisor.svg);
+      background-repeat: no-repeat;
+      background-position: 255px 155px;
+    }
+    .supervisor > .line{
+      background-color: hsl(180, 62%, 55%);
+    }
+    .team-builder{
+      position: absolute;
+      top: 0%;
+      left: 50%;
+      transform: translate(-50%);
+      background: url(./images/icon-team-builder.svg) no-repeat fixed;
+      background-position: 255px 155px;
+    }
+    .team-builder > .line{
+      background-color: hsl(0, 78%, 62%);
+    }
+    .calculator{
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(0, 25%);
+      background: url(./images/icon-calculator.svg) no-repeat fixed;
+      background-position: 255px 155px;
+    }
+    .calculator > .line{
+      background-color: hsl(212, 86%, 64%);
+    }
+    .karma{
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50% , 50%);
+      background: url(./images/icon-karma.svg) no-repeat fixed;
+      background-position: 255px 155px;
+    }
+    .karma > .line{
+      background-color: hsl(34, 97%, 64%);
+    }
+
+    .content content h1{
+      font-size: 20px;
+      margin: 0;
+    }
+    .content content p{
+      margin: 0;
+      margin-top: 8px;
+      font-size: 13px;
+      line-height: 22px;
+    }
+    @media screen and (max-width: 1100px) {
+        body{
+          align-items: start;
+          height: 170vh;
+          position: relative;
+        }
+        .container{
+          width: 375px;
+          transition: 0.2s ease;
+        }
+        .title{
+          margin-top: 100px;
+        }
+        .title h1{
+          width: inherit;
+          font-size: 24px;
+          letter-spacing: 1.6px;
+          margin-bottom: 5px;
+        }
+        .title h1 b{
+          letter-spacing: 2px;
+        }
+        .title p{
+          margin-top: 15px;
+          font-size: 17px;
+          padding: 0 20px 0 20px;
+          line-height: 28px;
+          width: inherit;
+          margin-bottom: 36px;
+        }
+        .content{
+          flex-direction: column;
+          position: relative;
+          height: fit-content;
+        }
+        .content content{
+          flex-direction: column;
+          position: relative;
+          margin: 30px auto;
+          top: 0;
+          right: 0;
+          left: inherit;
+          padding: 33px 30px 20px 33px ;
+          transform: translate(0);
+        }
+        .content content h1{
+          font-size: 22px;
+        }
+        .content content p{
+          margin-top: 6px;
+          font-size: 14.3px;
+          line-height: 25px;
+          letter-spacing: 0.3px;
+          /* font-weight: 600; */
+        }
+    }
+
+    *{
+      /* opacity: 0; */
+    }
+
+
+  </style>
+</head>
+<body>
+  
+  <main class="container">
+    <div class="title">
+      <h1>
+        Reliable, efficient delivery
+      </h1>
+      <h1><b>Powered by Technology</b></h1>
+      <p>
+        Our Artificial Intelligence powered tools use millions of project data points
+        to ensure that your project is successful
+      </p>
+    </div>
+    <menu class="content">
+      <content class="supervisor">
+        <div class="line"></div>
+        <h1>Supervisor</h1>
+        <p>Monitors activity to identify project roadblocks</p>
+      </content>
+      <content class="team-builder">
+        <div class="line"></div>
+        <h1>Team Builder</h1>
+        <p>Scans our talent network to create the optimal team for your project</p>
+      </content>
+      <content class="karma">
+        <div class="line"></div>
+        <h1>Karma</h1>
+        <p>Regularly evaluates our talent to ensure quality</p>
+      </content>
+      <content class="calculator">
+        <div class="line"></div>
+        <h1>Calculator</h1>
+        <p>Uses data from past projects to provide better delivery estimates</p>
+      </content>
+    </menu>
+  </main>
+
+  
+  <footer>
+    <p class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Your Name Here</a>.
+    </p>
+  </footer>
+
+</body>
+</html>
